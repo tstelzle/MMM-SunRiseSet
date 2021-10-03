@@ -12,8 +12,8 @@ Module.register("MMM-SunRiseSet", {
         lng: "-4.4203400",                        // longitude
 		image: "world",                           // world, map or static (for graph)
 		imageOnly: "no",                          // no = all data, yes = only animated image choice
-		dayOrNight: "night", // "night" approaching, "day" approaching (imageOnly must be "yes")
-    timeFormat: "",
+		dayOrNight: "night",                      // "night" approaching, "day" approaching (imageOnly must be "yes")
+        timeFormat: "",
         useHeader: false,                         // true if you want a header
         header: "On to the heart of the sunrise", // Any text you want. useHeader must be true
         maxWidth: "300px",
@@ -96,12 +96,11 @@ Module.register("MMM-SunRiseSet", {
 //			console.log(img.src);
 			pic.appendChild(img);
 			wrapper.appendChild(pic);
-		} else {
+		} else if (this.config.image == "world") {
 			var getTimeStamp = new Date().getTime(); // @Sean & @ Strawberry
 			img.src = "http://api.usno.navy.mil/imagery/earth.png?view=rise&seed=" + getTimeStamp; //
 			pic.appendChild(img);
 			wrapper.appendChild(pic);
-
 		}
 
 
